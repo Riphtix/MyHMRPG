@@ -1,8 +1,7 @@
 package com.riphtix.legendsofryphten;
 
-import com.riphtix.legendsofryphten.gfx.Colors;
-import com.riphtix.legendsofryphten.gfx.Screen;
-import com.riphtix.legendsofryphten.gfx.SpriteSheet;
+import com.riphtix.legendsofryphten.gfx.*;
+import com.riphtix.legendsofryphten.gfx.Font;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,7 +27,7 @@ public class Game extends Canvas implements Runnable {
             BufferedImage.TYPE_INT_RGB);
     private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer())
             .getData();
-    private int[] colours = new int[6 * 6 * 6];
+    private int[] colors = new int[6 * 6 * 6];
 
     private Screen screen;
     public InputHandler input;
@@ -59,7 +58,7 @@ public class Game extends Canvas implements Runnable {
                     int gg = (g * 255 / 5);
                     int bb = (b * 255 / 5);
 
-                    colours[index++] = rr << 16 | gg << 8 | bb;
+                    colors[index++] = rr << 16 | gg << 8 | bb;
                 }
             }
         }
@@ -143,18 +142,11 @@ public class Game extends Canvas implements Runnable {
             return;
         }
 
-        for (int y = 0; y < 32; y++) {
-            for (int x = 0; x < 32; x++) {
-                screen.render(x << 3, y << 3, 0,
-                        Colors.get(555, 500, 050, 005));
-            }
-        }
-
         for (int y = 0; y < screen.height; y++) {
             for (int x = 0; x < screen.width; x++) {
-                int ColourCode = screen.pixels[x + y * screen.width];
-                if (ColourCode < 255) {
-                    pixels[x + y * WIDTH] = colours[ColourCode];
+                int ColorCode = screen.pixels[x + y * screen.width];
+                if (ColorCode < 255) {
+                    pixels[x + y * WIDTH] = colors[ColorCode];
 
                 }
             }
