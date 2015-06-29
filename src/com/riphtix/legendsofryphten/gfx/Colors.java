@@ -3,8 +3,8 @@ package com.riphtix.legendsofryphten.gfx;
 public class Colors {
 
     public static int get(int color1, int color2, int color3, int color4) {
-        return ((get(color4) << 24) + (get(color3) << 16)
-                + (get(color2) << 8) + (get(color1)));
+        return (get(color4) << 24) + (get(color3) << 16)
+                + (get(color2) << 8) + get(color1);
     }
 
     private static int get(int color) {

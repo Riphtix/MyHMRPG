@@ -56,7 +56,7 @@ public class InputHandler implements KeyListener {
         if (KeyCode == KeyEvent.VK_W || KeyCode == KeyEvent.VK_UP) {
             up.toggle(isPressed);
         }
-        if (KeyCode == KeyEvent.VK_S|| KeyCode == KeyEvent.VK_DOWN) {
+        if (KeyCode == KeyEvent.VK_S || KeyCode == KeyEvent.VK_DOWN) {
             down.toggle(isPressed);
         }
         if (KeyCode == KeyEvent.VK_A || KeyCode == KeyEvent.VK_LEFT) {

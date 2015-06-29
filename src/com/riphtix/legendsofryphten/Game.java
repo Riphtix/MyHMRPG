@@ -1,7 +1,9 @@
 package com.riphtix.legendsofryphten;
 
-import com.riphtix.legendsofryphten.gfx.*;
-import com.riphtix.legendsofryphten.gfx.Font;
+import com.riphtix.legendsofryphten.entities.Player;
+import com.riphtix.legendsofryphten.gfx.Screen;
+import com.riphtix.legendsofryphten.gfx.SpriteSheet;
+import com.riphtix.legendsofryphten.level.Level;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,6 +33,8 @@ public class Game extends Canvas implements Runnable {
 
     private Screen screen;
     public InputHandler input;
+    public Level level;
+    public Player player;
 
     public Game() {
         setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -65,6 +69,9 @@ public class Game extends Canvas implements Runnable {
 
         screen = new Screen(WIDTH, HEIGHT, new SpriteSheet("/sprite_sheet.png"));
         input = new InputHandler(this);
+        level = new Level(64, 64);
+        player = new Player(level, 0, 0, input);
+        level.addEntity(player);
     }
 
     public synchronized void start() {
@@ -121,18 +128,7 @@ public class Game extends Canvas implements Runnable {
     public void tick() {
         tickCount++;
 
-        if (input.up.isPressed()) {
-            screen.yOffset--;
-        }
-        if (input.down.isPressed()) {
-            screen.yOffset++;
-        }
-        if (input.left.isPressed()) {
-            screen.xOffset--;
-        }
-        if (input.right.isPressed()) {
-            screen.xOffset++;
-        }
+        level.tick();
     }
 
     public void render() {
@@ -142,13 +138,18 @@ public class Game extends Canvas implements Runnable {
             return;
         }
 
+        int xOffset = player.x - (screen.width / 2);
+        int yOffset = player.y - (screen.height / 2);
+
+        level.renderTiles(screen, xOffset, yOffset);
+
+        level.renderEntities(screen);
+
         for (int y = 0; y < screen.height; y++) {
             for (int x = 0; x < screen.width; x++) {
-                int ColorCode = screen.pixels[x + y * screen.width];
-                if (ColorCode < 255) {
-                    pixels[x + y * WIDTH] = colors[ColorCode];
-
-                }
+                int colorCode = screen.pixels[x + y * screen.width];
+                if (colorCode < 255)
+                    pixels[x + y * WIDTH] = colors[colorCode];
             }
         }
 

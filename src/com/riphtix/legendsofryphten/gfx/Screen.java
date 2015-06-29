@@ -5,6 +5,9 @@ public class Screen {
     public static final int MAP_WIDTH = 64;
     public static final int MAP_WIDTH_MASK = MAP_WIDTH - 1;
 
+    public static final byte BIT_MIRROR_X = 0x01;
+    public static final byte BIT_MIRROR_Y = 0x02;
+
     public int[] pixels;
     // public int[] tiles = new int[MAP_WIDTH * MAP_WIDTH]; move to level class
     // (next episode?)
@@ -27,12 +30,15 @@ public class Screen {
     }
 
     public void render(int xPos, int yPos, int tile, int color) {
-        render(xPos, yPos, tile, color, false, false);
+        render(xPos, yPos, tile, color, 0x00);
     }
 
-    public void render(int xPos, int yPos, int tile, int color, boolean mirrorX, boolean mirrorY) {
+    public void render(int xPos, int yPos, int tile, int color, int mirrorDir) {
         xPos -= xOffset;
         yPos -= yOffset;
+
+        boolean mirrorX = (mirrorDir & BIT_MIRROR_X) > 0;
+        boolean mirrorY = (mirrorDir & BIT_MIRROR_Y) > 0;
 
         int xTile = tile % 32;
         int yTile = tile / 32;
@@ -61,5 +67,10 @@ public class Screen {
                 }
             }
         }
+    }
+
+    public void setOffset(int xOffset, int yOffset) {
+        this.xOffset = xOffset;
+        this.yOffset = yOffset;
     }
 }
