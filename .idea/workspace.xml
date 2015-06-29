@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22e4cce9-140b-420c-a6c1-2426a2ea2196" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LegendsOfRyphten/com/riphtix/legendsofryphten/Game.class" afterPath="$PROJECT_DIR$/out/production/LegendsOfRyphten/com/riphtix/legendsofryphten/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LegendsOfRyphten/com/riphtix/legendsofryphten/gfx/Screen.class" afterPath="$PROJECT_DIR$/out/production/LegendsOfRyphten/com/riphtix/legendsofryphten/gfx/Screen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LegendsOfRyphten/sprite_sheet.png" afterPath="$PROJECT_DIR$/out/production/LegendsOfRyphten/sprite_sheet.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/sprite_sheet.png" afterPath="$PROJECT_DIR$/res/sprite_sheet.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/gfx/Colors.java" afterPath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/gfx/Colors.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/gfx/Font.java" afterPath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/gfx/Font.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/Game.java" afterPath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/InputHandler.java" afterPath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/InputHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/level/Level.java" afterPath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/level/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/gfx/Screen.java" afterPath="$PROJECT_DIR$/src/com/riphtix/legendsofryphten/gfx/Screen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="22e4cce9-140b-420c-a6c1-2426a2ea2196" name="Default" comment="" />
     <ignored path="MyHMRPG.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
